@@ -9,7 +9,7 @@ This course introduces students to Python-based tools and workflows for analyzin
 - **Transcriptomics**: Gene expression and RNA-seq analysis
 - **Imagomics**: Medical imaging and spatial biology
 
-**Target Audience**: Graduate students in biomedical informatics with basic Python knowledge  
+
 **Duration**: Two 3-hour classes  
 **Prerequisites**: Basic Python programming, familiarity with biological concepts
 
@@ -100,8 +100,7 @@ This course introduces students to Python-based tools and workflows for analyzin
 │   │   └── 05_imagomics_visualization_demo.ipynb
 │   │
 │   └── data/
-│       └── README.md (links to public datasets)
-│
+│       └── README.md │
 ├── Class2_Advanced_Analysis/
 │   ├── presentations/
 │   │   ├── 01_Advanced_Genomics.pdf
@@ -119,15 +118,7 @@ This course introduces students to Python-based tools and workflows for analyzin
 │   │
 │   └── data/
 │       └── README.md (links to public datasets)
-│
-└── resources/
-    ├── cheatsheets/
-    │   ├── biopython_cheatsheet.md
-    │   ├── scanpy_cheatsheet.md
-    │   └── data_sources.md
-    │
-    └── additional_tutorials/
-        └── README.md
+
 ```
 
 ## 🔧 Installation & Setup
@@ -202,32 +193,6 @@ All notebooks are designed to run on Google Colab. Simply click the "Open in Col
 - `requests >= 2.31.0`
 - `tqdm >= 4.65.0`
 
-## 🎓 Learning Path
-
-### Before Class 1
-- Review basic Python syntax
-- Familiarize yourself with Jupyter notebooks
-- Read about central dogma of molecular biology
-
-### During Class 1
-- Follow along with live coding sessions
-- Complete exercises in notebooks
-- Ask questions during breaks
-
-### Between Classes
-- Review Class 1 materials
-- Practice with additional datasets
-- Explore suggested readings
-
-### During Class 2
-- Build on Class 1 foundations
-- Work on integrated analysis
-- Start thinking about final projects
-
-### After Class 2
-- Complete final project (optional)
-- Explore advanced topics
-- Join bioinformatics community forums
 
 ## 📊 Datasets Used
 
@@ -287,21 +252,13 @@ Contributions are welcome! If you find bugs, have suggestions, or want to add ne
 - [SEQanswers Forum](http://seqanswers.com/)
 - [r/bioinformatics Reddit](https://www.reddit.com/r/bioinformatics/)
 
-## 👨‍🏫 Instructors
 
-**Prof. Ramana Davuluri**  
-Department of Biomedical Informatics  
-Stony Brook University
-
-**Prof. Fusheng Wang**  
-Department of Biomedical Informatics  
-Stony Brook University
 
 ## 📧 Contact
 
 For questions about the course materials:
 - Create an issue in this repository
-- Email: [your-email@stonybrook.edu]
+- Email: [pratik.dutta@stonybrook.edu]
 
 ## 📝 License
 
@@ -311,8 +268,7 @@ You are free to:
 - Share — copy and redistribute the material
 - Adapt — remix, transform, and build upon the material
 
-Under the following terms:
-- Attribution — You must give appropriate credit
+
 
 ## 🙏 Acknowledgments
 
