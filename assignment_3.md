@@ -83,7 +83,7 @@ lengths = [len1, len2]  # Replace with actual lengths
 
 ---
 
-### **Part II: Working with FASTQ Files (4 points)**
+### **Part II: Working with FASTQ Files **
 
 FASTQ format stores sequences with quality scores. Each read consists of 4 lines:
 1. Header (starts with @)
@@ -160,7 +160,7 @@ vcf_data = pd.read_csv("variants.vcf", sep="\t", comment="##",
 - Variant count for each chromosome
 - Chromosome with highest variant density
 
-#### Task 3.2: Quality Filtering (2 points)
+#### Task 3.2: Quality Filtering 
 
 Apply standard quality control filters:
 
