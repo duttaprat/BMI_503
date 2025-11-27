@@ -37,7 +37,7 @@ All datasets are available in the course GitHub repository: `https://github.com/
 
 FASTA format stores biological sequences with a header line (starting with '>') followed by sequence data.
 
-#### Task 1.1: Parse FASTA with Biopython (2 points)
+#### Task 1.1: Parse FASTA with Biopython 
 
 Write code to parse `gene_sequences.fasta` and extract basic information:
 
