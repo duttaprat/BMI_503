@@ -1,9 +1,7 @@
 # Assignment 3: Bioinformatics File Formats and Analysis
 **BMI 503 – Introduction to Programming for Biomedical Informatics**
 
-**Instructors:** Prof. Ramana Davuluri, Prof. Fusheng Wang, and Rekha Sathian  
-**Institution:** Department of Biomedical Informatics, Stony Brook University  
-**Total Points:** 15 points
+
 
 ---
 
@@ -35,7 +33,7 @@ All datasets are available in the course GitHub repository: `https://github.com/
 
 ## 📝 Assignment Tasks
 
-### **Part I: Working with FASTA Files (5 points)**
+### **Part I: Working with FASTA Files **
 
 FASTA format stores biological sequences with a header line (starting with '>') followed by sequence data.
 
@@ -61,7 +59,7 @@ for record in SeqIO.parse("gene_sequences.fasta", "fasta"):
 - Total length in base pairs
 - GC content as percentage
 
-#### Task 1.2: Sequence Analysis (3 points)
+#### Task 1.2: Sequence Analysis 
 
 For each gene sequence, perform the following analyses:
 
@@ -80,11 +78,7 @@ import matplotlib.pyplot as plt
 genes = ['TP53', 'BRCA1']
 lengths = [len1, len2]  # Replace with actual lengths
 
-plt.bar(genes, lengths)
-plt.xlabel('Gene')
-plt.ylabel('Sequence Length (bp)')
-plt.title('Gene Sequence Length Comparison')
-plt.savefig('sequence_comparison.png', dpi=300, bbox_inches='tight')
+
 ```
 
 ---
@@ -97,13 +91,13 @@ FASTQ format stores sequences with quality scores. Each read consists of 4 lines
 3. Separator (+)
 4. Quality scores
 
-#### Task 2.1: Parse FASTQ and Calculate Statistics (2 points)
+#### Task 2.1: Parse FASTQ and Calculate Statistics 
 
 ```python
 from Bio import SeqIO
 
 # Parse FASTQ file
-reads = list(SeqIO.parse("sample_reads.fastq", "fastq"))
+
 
 # Calculate:
 # 1. Total number of reads
@@ -121,7 +115,7 @@ def calculate_average_quality(quality_string):
     return sum(phred_scores) / len(phred_scores)
 ```
 
-#### Task 2.2: Quality Control Analysis (2 points)
+#### Task 2.2: Quality Control Analysis 
 
 Analyze the quality of sequencing reads:
 
@@ -137,26 +131,16 @@ Analyze the quality of sequencing reads:
 import matplotlib.pyplot as plt
 
 # Collect average quality scores
-avg_qualities = [calculate_average_quality(str(read.letter_annotations["phred_quality"])) 
-                 for read in reads]
 
-plt.hist(avg_qualities, bins=20, edgecolor='black')
-plt.xlabel('Average Quality Score (Phred)')
-plt.ylabel('Number of Reads')
-plt.title('Distribution of Read Quality Scores')
-plt.axvline(x=20, color='orange', linestyle='--', label='Q20 threshold')
-plt.axvline(x=30, color='green', linestyle='--', label='Q30 threshold')
-plt.legend()
-plt.savefig('quality_distribution.png', dpi=300, bbox_inches='tight')
 ```
 
 ---
 
-### **Part III: Working with VCF Files (6 points)**
+### **Part III: Working with VCF Files **
 
 VCF (Variant Call Format) stores information about genetic variants. It contains header lines (starting with ##) followed by a table with columns including CHROM, POS, REF, ALT, QUAL, FILTER, and INFO.
 
-#### Task 3.1: Parse VCF with pandas (2 points)
+#### Task 3.1: Parse VCF with pandas
 
 ```python
 import pandas as pd
@@ -182,82 +166,19 @@ Apply standard quality control filters:
 
 ```python
 # Filter 1: Quality score ≥ 30
-high_qual_variants = vcf_data[vcf_data['QUAL'] >= 30]
+
 
 # Filter 2: FILTER column = "PASS"
-passed_variants = high_qual_variants[high_qual_variants['FILTER'] == 'PASS']
+
 
 # Calculate percentage of variants passing both filters
-pass_rate = (len(passed_variants) / len(vcf_data)) * 100
+
 ```
 
 **Report:**
 - Number of variants passing quality threshold
 - Number of variants with FILTER="PASS"
 - Overall pass rate as percentage
-
-#### Task 3.3: Cancer Gene Analysis (2 points)
-
-Focus on clinically significant cancer genes: **TP53, BRCA1, BRCA2, EGFR, KRAS**
-
-The INFO column contains gene names and impact predictions. Parse this information:
-
-```python
-def extract_gene_from_info(info_string):
-    """Extract gene name from INFO field"""
-    # INFO format example: "GENE=TP53;IMPACT=HIGH;..."
-    for item in info_string.split(';'):
-        if item.startswith('GENE='):
-            return item.split('=')[1]
-    return None
-
-def extract_impact_from_info(info_string):
-    """Extract impact level from INFO field"""
-    for item in info_string.split(';'):
-        if item.startswith('IMPACT='):
-            return item.split('=')[1]
-    return None
-
-# Add parsed columns
-vcf_data['GENE'] = vcf_data['INFO'].apply(extract_gene_from_info)
-vcf_data['IMPACT'] = vcf_data['INFO'].apply(extract_impact_from_info)
-
-# Filter for cancer genes
-cancer_genes = ['TP53', 'BRCA1', 'BRCA2', 'EGFR', 'KRAS']
-cancer_variants = vcf_data[vcf_data['GENE'].isin(cancer_genes)]
-```
-
-**Analysis requirements:**
-1. Count variants per gene
-2. Count variants by IMPACT level (HIGH, MODERATE, LOW, MODIFIER)
-3. Which gene has the most HIGH impact variants?
-
-**Create visualizations:**
-
-```python
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Plot 1: Variants per gene
-fig, axes = plt.subplots(1, 2, figsize=(14, 5))
-
-gene_counts = cancer_variants['GENE'].value_counts()
-axes[0].bar(gene_counts.index, gene_counts.values)
-axes[0].set_xlabel('Gene')
-axes[0].set_ylabel('Number of Variants')
-axes[0].set_title('Variants per Cancer Gene')
-axes[0].tick_params(axis='x', rotation=45)
-
-# Plot 2: Variants by impact
-impact_counts = cancer_variants['IMPACT'].value_counts()
-axes[1].bar(impact_counts.index, impact_counts.values, color=['red', 'orange', 'yellow', 'lightblue'])
-axes[1].set_xlabel('Impact Level')
-axes[1].set_ylabel('Number of Variants')
-axes[1].set_title('Variants by Predicted Impact')
-
-plt.tight_layout()
-plt.savefig('cancer_variant_analysis.png', dpi=300, bbox_inches='tight')
-```
 
 ---
 
@@ -377,32 +298,9 @@ TIME SPENT: [X] hours
 
 ---
 
-## 🎯 Grading Rubric (15 points total)
 
-| Component | Points | Criteria |
-|-----------|--------|----------|
-| **Part I: FASTA** | | |
-| Task 1.1: Parsing & GC content | 2 | Correct parsing, accurate GC calculation |
-| Task 1.2: Sequence analysis | 3 | Start codon, codons, translation, visualization |
-| **Part II: FASTQ** | | |
-| Task 2.1: Basic statistics | 2 | Correct read count, length, quality calculation |
-| Task 2.2: Quality control | 2 | Accurate filtering, proper visualization |
-| **Part III: VCF** | | |
-| Task 3.1: VCF parsing | 2 | Correct loading, chromosome statistics |
-| Task 3.2: Quality filtering | 2 | Proper filter implementation |
-| Task 3.3: Gene analysis | 2 | INFO parsing, gene/impact analysis, visualizations |
-| **Code Quality** | | |
-| Code organization | 1 | Clean, commented, follows best practices |
-| Documentation | 1 | Complete RESULTS.txt with accurate values |
-| **Total** | **15** | |
 
-**Deductions:**
-- Missing or incorrect visualization: -0.5 points each
-- Code does not run: -2 points
-- Missing RESULTS.txt: -1 point
-- Late submission: -1 point per day
 
----
 
 ## 💡 Helpful Resources
 
