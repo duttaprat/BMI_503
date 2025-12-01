@@ -34,7 +34,7 @@ Now you'll apply this workflow to find **real regulatory elements** in the human
 
 ---
 
-## 🧬 ASSIGNMENT 1: Splice Acceptor Sites (25 points)
+## 🧬 ASSIGNMENT 1: Splice Acceptor Sites
 
 ### Background
 
@@ -163,7 +163,7 @@ What percentage did you expect? Is your result reasonable?
 
 ---
 
-## 🧬 ASSIGNMENT 2: Splice Donor Sites (30 points)
+## 🧬 ASSIGNMENT 2: Splice Donor Sites 
 
 ### Background
 
@@ -275,7 +275,7 @@ Discussion (1 paragraph, 5-6 sentences):
 
 ---
 
-## 🧬 ASSIGNMENT 3: p53 Binding Sites (45 points)
+## 🧬 ASSIGNMENT 3: p53 Binding Sites 
 
 ### Background
 
