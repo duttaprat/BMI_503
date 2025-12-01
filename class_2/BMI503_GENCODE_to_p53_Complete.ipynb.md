@@ -10,10 +10,23 @@
 ## 📚 Table of Contents
 
 
-10. [Real-World Example: Complete Pipeline](#section10)
+ [Real-World Example: Complete Pipeline](#section10)
 
 
 ---
+
+## Assignment 
+
+```
+Find p53 binding sites in human promoters using:
+1. GTF parsing (get TSS locations)
+2. Sequence extraction (promoter regions)
+3. Regular expressions (find motifs)
+
+p53 motif: RRRCWWGYYY {0-10bp} RRRCWWGYYY
+```
+
+
 
 <a id="section9"></a>
 ## 9️⃣ Finding p53 Binding Sites with Regular Expression
