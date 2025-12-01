@@ -2,11 +2,11 @@
 ## Finding Regulatory Elements Using Regular Expressions
 
 **Due Dates:**
-- Assignment 1 (Acceptor Sites): Wednesday, December 4, 2024
-- Assignment 2 (Donor Sites): Friday, December 6, 2024  
-- Assignment 3 (p53 Sites): Monday, December 9, 2024
+- Assignment 1 (Acceptor Sites)
+- Assignment 2 (Donor Sites)
+- Assignment 3 (p53 Sites)
 
-**Total Points:** 100 (Acceptor: 25pts, Donor: 30pts, p53: 45pts)
+
 
 ---
 
@@ -105,7 +105,7 @@ genome = Fasta('Homo_sapiens.GRCh38.dna.chromosome.22.fa')
 
 ---
 
-#### Task 1.3: Search for Pattern Matches (7 pts)
+#### Task 1.3: Search for Pattern Matches 
 
 Search each extracted sequence for your regex pattern.
 
@@ -124,7 +124,7 @@ import re
 
 ---
 
-#### Task 1.4: Calculate Statistics & Report (5 pts)
+#### Task 1.4: Calculate Statistics & Report 
 
 **Calculate:**
 - Total acceptor sites analyzed
@@ -196,7 +196,7 @@ AAGGTAAGT
 
 ### Your Tasks
 
-#### Task 2.1: Build the Regular Expression (5 pts)
+#### Task 2.1: Build the Regular Expression 
 
 Convert `MAGGTRAGT` into a Python regular expression.
 
@@ -211,7 +211,7 @@ donor_pattern = r"[__]AGG[__][__]AGT"
 
 ---
 
-#### Task 2.2: Extract Sequences Around Donor Sites (8 pts)
+#### Task 2.2: Extract Sequences Around Donor Sites 
 
 Similar to Assignment 1, but for donor sites.
 
@@ -227,7 +227,7 @@ Similar to Assignment 1, but for donor sites.
 
 ---
 
-#### Task 2.3: Search for Pattern Matches (7 pts)
+#### Task 2.3: Search for Pattern Matches 
 
 Search each donor sequence for your regex pattern.
 
@@ -237,7 +237,7 @@ Search each donor sequence for your regex pattern.
 
 ---
 
-#### Task 2.4: Compare with Acceptor Sites (10 pts)
+#### Task 2.4: Compare with Acceptor Sites 
 
 **Calculate:**
 - Total donor sites analyzed
@@ -314,7 +314,7 @@ GGGCATGTCCATAGGGACTTGCCT      ← 5 bp spacer
 
 ### Your Tasks
 
-#### Task 3.1: Build the Complex Regular Expression (10 pts)
+#### Task 3.1: Build the Complex Regular Expression 
 
 This is the **most challenging** pattern!
 
@@ -353,7 +353,7 @@ test_sequences = [
 
 ---
 
-#### Task 3.2: Extract Promoter Sequences (8 pts)
+#### Task 3.2: Extract Promoter Sequences 
 
 You already have `promoter_df` from class with promoter coordinates (-1kb to TSS).
 
@@ -368,7 +368,7 @@ You already have `promoter_df` from class with promoter coordinates (-1kb to TSS
 
 ---
 
-#### Task 3.3: Search for p53 Binding Sites (12 pts)
+#### Task 3.3: Search for p53 Binding Sites 
 
 Search each promoter sequence for p53 motifs.
 
@@ -391,7 +391,7 @@ for each promoter:
 
 ---
 
-#### Task 3.4: Analyze Spacer Length Distribution (8 pts)
+#### Task 3.4: Analyze Spacer Length Distribution 
 
 **Calculate:**
 - How many matches have 0 bp spacer?
@@ -423,7 +423,7 @@ You can create this using matplotlib or just ASCII art like above.
 
 ---
 
-#### Task 3.5: Comprehensive Report (7 pts)
+#### Task 3.5: Comprehensive Report 
 
 **Create a final report:**
 
@@ -464,102 +464,6 @@ Sequence: _________________________________
 
 ---
 
-#### Task 3.6: Biological Interpretation (BONUS +10 pts)
-
-**Research Challenge:**
-
-Pick **5 genes** from your top results and look them up on [GeneCards](https://www.genecards.org).
-
-**Answer these questions:**
-1. What is each gene's function?
-2. Is it related to cancer, DNA repair, cell cycle, or apoptosis?
-3. Does it make biological sense that p53 would regulate this gene?
-
-**What to submit:**
-
-```
-BIOLOGICAL INTERPRETATION
-========================
-
-Gene 1: ________
-- Function: ____________
-- Cancer-related? Yes/No - Explain
-- Expected p53 target? Yes/No - Why?
-
-Gene 2: ________
-... (continue for all 5)
-
-CONCLUSION (1 paragraph):
-Overall, do your computational results make biological sense?
-Are most of your top hits actually involved in processes p53 regulates?
-```
-
----
-
-## 📤 Submission Instructions
-
-### For Each Assignment, Submit:
-
-1. **Jupyter Notebook (.ipynb)** or **Python Script (.py)**
-   - Well-commented code
-   - Clear section headers
-   - All outputs visible (if notebook)
-
-2. **Report (PDF or Markdown)**
-   - All required statistics
-   - Examples
-   - Discussion/interpretation
-
-3. **Data Files:**
-   - Assignment 1: `acceptor_sequences.csv`
-   - Assignment 2: `donor_sequences.csv` + comparison table
-   - Assignment 3: `p53_sites.csv` (all sites found)
-
-### File Naming Convention:
-```
-LastName_FirstName_Assignment1.ipynb
-LastName_FirstName_Assignment1_Report.pdf
-LastName_FirstName_acceptor_sequences.csv
-```
-
-### Submit via:
-[Specify: Blackboard / Email / GitHub / etc.]
-
----
-
-## 🎯 Grading Rubric
-
-### Assignment 1: Acceptor Sites (25 pts)
-- Regular expression pattern (5 pts)
-- Sequence extraction code (8 pts)
-- Pattern search implementation (7 pts)
-- Report with statistics and examples (5 pts)
-
-### Assignment 2: Donor Sites (30 pts)
-- Regular expression pattern (5 pts)
-- Sequence extraction code (8 pts)
-- Pattern search implementation (7 pts)
-- Comparison table and discussion (10 pts)
-
-### Assignment 3: p53 Sites (45 pts)
-- Complex regex pattern with spacer (10 pts)
-- Promoter sequence extraction (8 pts)
-- Search implementation (12 pts)
-- Spacer analysis and visualization (8 pts)
-- Comprehensive report (7 pts)
-- **BONUS:** Biological interpretation (+10 pts)
-
----
-
-## 💡 Tips for Success
-
-1. **Start early** - Test your regex on small examples first
-2. **Use the class notebook** - Reference your in-class work
-3. **Test incrementally** - Don't write all code at once
-4. **Ask questions** - Office hours, Piazza, email
-5. **Verify your patterns** - Test on known sequences before full analysis
-6. **Comment your code** - Explain your logic
-7. **Check strand orientation** - Most common source of errors!
 
 ---
 
@@ -583,47 +487,10 @@ LastName_FirstName_acceptor_sequences.csv
 
 ---
 
-## ❓ FAQ
 
-**Q: Can I work in groups?**
-A: You can discuss approaches, but submit your own code and report.
-
-**Q: My match rates seem low. Is that OK?**
-A: Yes! Real biology is messy. Discuss why in your report.
-
-**Q: Can I use a different chromosome?**
-A: Stick with chr22 for consistency, unless you have a good reason.
-
-**Q: What if I can't extract some sequences (negative coordinates)?**
-A: Skip those. Document how many you skipped.
-
-**Q: Can I use libraries other than pandas and re?**
-A: Yes, but justify why. Keep it simple when possible.
-
----
-
-## 🎓 Learning Goals Achieved
-
-By completing these assignments, you will have:
-- ✅ Applied computational pattern matching to real genomic data
-- ✅ Connected DNA sequences to biological function
-- ✅ Practiced the complete bioinformatics workflow
-- ✅ Understood splice sites and transcription factor binding
-- ✅ Analyzed real regulatory elements in the human genome
-- ✅ Developed skills for future genomics research
 
 **Good luck! 🧬🔬**
 
----
 
-## 📧 Contact
 
-**Instructor:** Pratik Dutta  
-**Course:** BMI 503 - Introduction to Programming for Biomedical Informatics  
-**Institution:** Stony Brook University  
-**Office Hours:** [TBD]  
-**Email:** [TBD]
 
----
-
-*Last Updated: December 1, 2024*
